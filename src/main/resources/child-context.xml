@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation=
+               "http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="sound1" class="com.example.ch3.Sound"
+          p:title-ref="parentTitle"/>
+    <bean id="sound2" class="com.example.ch3.Sound"
+          p:title-ref="childTitle"/>
+    <bean id="sound3" class="com.example.ch3.Sound">
+        <property name="title">
+            <ref parent="childTitle"/>
+        </property>
+    </bean>
+    <bean id="childTitle" class="java.lang.String" c:_0="No Such Thing"/>
+
+
+
+
+
+
+</beans>

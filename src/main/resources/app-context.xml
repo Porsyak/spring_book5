@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation=
+               "http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="provider"
+          class="com.example.ch2.decompiled.HelloWorldMassageProvider"/>
+    <bean id="renderer"
+          class="com.example.ch2.decompiled.StandardOutMassageRenderer"
+          p:massageProvider-ref="provider"/>
+    <bean id="injectSimpleConfig"
+          class="com.example.ch3.annotated.InjectSimpleConfig"/>
+    <bean id="injectSimpleSpel"
+          class="com.example.ch3.xml.InjectSimpleSpel"
+          p:name="#{injectSimpleConfig.name}"
+          p:age="#{injectSimpleConfig.age}"
+          p:height="#{injectSimpleConfig.height}"
+          p:programmer="#{injectSimpleConfig.programming}"
+          p:adeInSeconds="#{injectSimpleConfig.ageInSeconds}"/>
+    <bean id="string1"
+          class="java.lang.String"/>
+    <bean id="string2"
+          class="java.lang.String"/>
+    <bean class="java.lang.String"/>
+    <bean class="java.lang.String"/>
+    <bean id="john" name="jon johnny, jonathan; jim"
+          class="java.lang.String"/>
+    <alias name="john" alias="s"/>
+</beans>
