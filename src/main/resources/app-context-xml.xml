@@ -4,8 +4,13 @@
        xmlns:p="http://www.springframework.org/schema/p"
        xmlns:c="http://www.springframework.org/schema/c"
        xmlns:context="http://www.springframework.org/schema/context"
+
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd"
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd"
+
+
        default-lazy-init="true" default-init-method="init">
     <bean id="singerOne" class="com.example.ch4.Singer"
           p:name="Ivan Porsyak" p:age="41"/>
@@ -21,10 +26,10 @@
           p:filePath="text.txt"/>
     <bean id="messageRenderer"
           class="com.example.ch2.decompiled.StandardOutMassageRenderer"
-    p:massageProvider-ref="messageProvider"/>
+          p:massageProvider-ref="messageProvider"/>
     <bean id="messageProvider"
           class="com.example.ch3.xml.ConfigurableMassageProvider"
-    c:massage="This is a configurable message"/>
+          c:massage="This is a configurable message"/>
 
 
 </beans>
