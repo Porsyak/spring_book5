@@ -14,5 +14,6 @@ public class AgentAOPDemo {
         agent.speak();
         System.out.println("");
         proxy.speak();
+
     }
 }
